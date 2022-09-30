@@ -1,10 +1,8 @@
 # Changes
-- This is a [CHANGES.md](https://go.s3d.club/changes/) file
+Recently completed and planned work is tracked here.
 
-## [0.0.1](https://go.s3d.club/terraform-aws-sg_ingress_ssh/work/0.0.1)
-- Added initial implementation
+## [0.0.1](.) [0.0.10](.)
+- Early versions
 
-## [Next](https://go.s3d.club/terraform-aws-sg_ingress_ssh/next)
-- **TODO** Added CI/CD
-- **TODO** Improved `README.md`
-- **TODO** Updated `.terraform.lock.hcl`
+## [0.1.0](.)
+- Completed 1st release
