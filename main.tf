@@ -1,15 +1,14 @@
 module "name" {
-  source = "git::https://github.com/s3d-club/terraform-external-data-name-tags?ref=v0.1.0"
+  source = "github.com/s3d-club/terraform-external-name?ref=v0.1.1"
 
-  name_prefix  = var.name_prefix
-  name_segment = "ingress-ssh"
-  path         = path.module
-  tags         = var.tags
+  context = join("-", [var.name_prefix, "ingress-ssh"])
+  path    = path.module
+  tags    = var.tags
 }
 
 resource "aws_security_group" "this" {
   description = "Allow SSH inbound traffic"
-  name_prefix = module.name.name_prefix
+  name_prefix = module.name.prefix
   tags        = module.name.tags
   vpc_id      = var.vpc
 
