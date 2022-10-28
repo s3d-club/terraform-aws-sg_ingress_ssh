@@ -11,5 +11,5 @@ Recently completed and planned work is tracked here.
 - Updated `aws` provider
 - Updated `name` module
 
-## [0.1.12](.)
+## [0.1.12](.) to [0.1.13](.)
 - Improved descriptions of variables and outputs
