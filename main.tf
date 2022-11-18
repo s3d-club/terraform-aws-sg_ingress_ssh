@@ -1,5 +1,5 @@
 module "name" {
-  source = "github.com/s3d-club/terraform-external-name?ref=v0.1.17"
+  source = "github.com/s3d-club/terraform-external-name?ref=v0.1.19"
 
   context = join("-", [var.name_prefix, "ingress-ssh"])
   path    = path.module
