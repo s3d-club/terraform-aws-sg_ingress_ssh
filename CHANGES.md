@@ -8,6 +8,6 @@ This file describes the project history as it relates to tagged versions.
 - Improved descriptions of variables and outputs
 - Updated docs, providers and modules
 
-## [0.1.22](.) to [0.1.23](.)
+## [0.1.22](.) to [0.1.24](.)
 - Updated `aws` provider
 - Updated `required_version`
