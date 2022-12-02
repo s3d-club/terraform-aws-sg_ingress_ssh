@@ -1,18 +1,23 @@
-data "aws_vpc" "this" {
-  default = true
+module "name" {
+  source = "github.com/s3d-club/terraform-external-name?ref=v1.0.1"
+
+  context = join("-", [var.name_prefix, "ingress-ssh"])
+  path    = path.module
+  tags    = var.tags
 }
 
 resource "aws_security_group" "this" {
-  name_prefix = "unrestricted-egress-"
-  description = "Unrestricted Egress"
-  vpc_id      = data.aws_vpc.this.id
+  description = "Allow SSH inbound traffic"
+  name_prefix = module.name.prefix
+  tags        = module.name.tags
+  vpc_id      = var.vpc_id
 
-  egress {
-    description      = "Unrestricted Egress"
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = var.cidr_blocks
-    ipv6_cidr_blocks = var.ipv6_cidr_blocks
+  ingress {
+    cidr_blocks      = var.cidrs
+    description      = "SSH Access"
+    from_port        = 22
+    ipv6_cidr_blocks = var.cidr6s
+    protocol         = "tcp"
+    to_port          = 22
   }
 }
